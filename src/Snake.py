@@ -8,14 +8,13 @@ class Snake:
         self._direction: Vec2 = Vec2(1, 0)
 
     def step(self):
-        # Move head
-        self.body[0] += self.direction
-
         # Move body
         body_len = len(self.body)
-        for i in range(body_len - 1, 0):
-            next_cell = self.body[i-1]
-            self.body[i] = next_cell
+        for i in reversed(range(1, body_len)):
+            self.body[i] = self.body[i-1]
+
+        # Move head
+        self.body[0] += self.direction
 
     def grow(self):
         self._body.append(self.body[-1])
