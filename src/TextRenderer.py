@@ -9,11 +9,12 @@ class TextRenderer:
         pass
 
     def render(self, game_observation: GameObservation):
+        score = game_observation.score
         board_size = game_observation.board_size
         snake_body = game_observation.snake_body
         apple_position = game_observation.apple_position
 
-        chars = []
+        chars = [f'Score: {score}\n']
 
         for y in range(0, board_size.y):
             if y == 0:
