@@ -9,6 +9,7 @@ class GameManager:
     def __init__(self, board_size: Vec2, snake_controller: SnakeController):
         self._snake_controller = snake_controller
         self._game = Game(board_size)
+        self._game_observation = self._generate_observation()
 
     def step(self):
         self._game_observation = self._generate_observation()
@@ -30,3 +31,7 @@ class GameManager:
     @property
     def is_running(self):
         return not self._game.is_over
+
+    @property
+    def game_observation(self):
+        return self._game_observation

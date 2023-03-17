@@ -33,3 +33,14 @@ class GameObservation:
     @property
     def score(self):
         return self._score
+
+    def __str__(self):
+        strs = [
+            f'Board size: {self.board_size}',
+            f'Is Over: {self.is_game_over}',
+            f'Score: {self.score}',
+            f'Apple Position: {self.apple_position}',
+            f'Snake Body: {", ".join([str(c) for c in self.snake_body])}',
+            f'Snake Direction: {self.snake_direction}'
+        ]
+        return '\n'.join(strs)
