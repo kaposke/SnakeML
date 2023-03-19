@@ -24,7 +24,7 @@ class Game:
 
     def _randomize_apple(self):
         self._apple_position = Vec2(random.randint(
-            0, self._board_size.x), random.randint(0, self._board_size.y))
+            0, self._board_size.x - 1), random.randint(0, self._board_size.y - 1))
 
     def _initialize_snake(self):
         center = Vec2(math.floor(self._board_size.x / 2),
