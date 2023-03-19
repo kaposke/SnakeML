@@ -1,10 +1,15 @@
+from dataclasses import dataclass
 import math
 
 
+@dataclass
 class Vec2:
     def __init__(self, x: int = 0, y: int = 0):
         self._x = x
         self._y = y
+
+    def to_tuple(self):
+        return (self.x, self.y)
 
     @property
     def x(self) -> int:
@@ -29,7 +34,10 @@ class Vec2:
         return Vec2(self.x - other.x, self.y - other.y)
 
     def __mul__(self, other) -> int:
-        return self.x*other.x + self.y*other.y
+        return Vec2(self.x * other.x, self.y * other.y)
+
+    def __truediv__(self, other):
+        return Vec2(self.x / other.x, self.y / other.y)
 
     def __abs__(self) -> int:
         return math.sqrt(self.x**2 + self.y**2)

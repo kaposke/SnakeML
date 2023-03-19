@@ -10,9 +10,8 @@ class GameManager:
         self._game = Game(board_size)
         self._game_observation = self._generate_observation()
 
-    def play(self):
-        while self.is_running:
-            self.step()
+    def restart(self):
+        self._game.restart()
 
     def step(self):
         self._game_observation = self._generate_observation()

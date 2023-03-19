@@ -34,6 +34,9 @@ class Game:
 
         self._snake = Snake(body)
 
+    def restart(self):
+        self._setup()
+
     def step(self):
         self._snake.step()
         if self._snake.is_overlapping_itself:
