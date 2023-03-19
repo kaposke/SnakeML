@@ -5,3 +5,6 @@ disable=
     C0115, # missing-class-docstring
     C0116, # missing-method-docstring
     C0103 # invalid-name 
+
+[TYPECHECK]
+ignored-modules=pygame
