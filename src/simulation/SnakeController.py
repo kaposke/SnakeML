@@ -1,4 +1,3 @@
-
 from .GameObservation import GameObservation
 
 

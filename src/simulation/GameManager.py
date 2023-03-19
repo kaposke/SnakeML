@@ -1,7 +1,6 @@
-
-from .GameObservation import GameObservation
 from game.Game import Game
 from game.Vec2 import Vec2
+from .GameObservation import GameObservation
 from .SnakeController import SnakeController
 
 
@@ -19,7 +18,7 @@ class GameManager:
         self._game_observation = self._generate_observation()
         direction = self._snake_controller.pick_direction(
             self._game_observation)
-        self._game._snake.direction = direction
+        self._game.set_snake_direction(direction)
         self._game.step()
 
     def _generate_observation(self):

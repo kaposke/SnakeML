@@ -1,5 +1,3 @@
-
-
 class GameObservation:
 
     def __init__(self, board_size, is_game_over, apple_position, snake_body, snake_direction, score):

@@ -50,6 +50,9 @@ class Game:
     def end_game(self):
         self._over = True
 
+    def set_snake_direction(self, direction: Vec2):
+        self._snake.direction = direction
+
     @property
     def _is_snake_head_out_of_board(self):
         snake_head = self._snake.head
