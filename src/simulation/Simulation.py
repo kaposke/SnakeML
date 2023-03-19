@@ -12,6 +12,7 @@ class Simulation:
 
     def restart(self):
         self._game.restart()
+        self._game_observation = self._generate_observation()
 
     def set_input(self, direction: Vec2):
         self._input = direction
