@@ -1,8 +1,8 @@
 
-from GameObservation import GameObservation
-from Game import Game
-from Vec2 import Vec2
-from SnakeController import SnakeController
+from .GameObservation import GameObservation
+from game.Game import Game
+from game.Vec2 import Vec2
+from .SnakeController import SnakeController
 
 
 class GameManager:
@@ -11,20 +11,24 @@ class GameManager:
         self._game = Game(board_size)
         self._game_observation = self._generate_observation()
 
+    def play(self):
+        while self.is_running:
+            self.step()
+
     def step(self):
         self._game_observation = self._generate_observation()
         direction = self._snake_controller.pick_direction(
             self._game_observation)
-        self._game.snake.direction = direction
+        self._game._snake.direction = direction
         self._game.step()
 
     def _generate_observation(self):
         return GameObservation(
             self._game.board_size,
             self._game.is_over,
-            self._game._apple_position,
-            self._game.snake.body,
-            self._game.snake.direction,
+            self._game.apple_position,
+            self._game.snake_body,
+            self._game.snake_direction,
             self._game.score
         )
 

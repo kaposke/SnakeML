@@ -1,8 +1,7 @@
-
 import random
-from Vec2 import Vec2
-from GameObservation import GameObservation
-from SnakeController import SnakeController
+from game.Vec2 import Vec2
+from simulation.GameObservation import GameObservation
+from simulation.SnakeController import SnakeController
 
 
 class RandomSnakeController(SnakeController):

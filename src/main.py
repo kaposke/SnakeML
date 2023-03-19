@@ -1,8 +1,8 @@
 
-from RandomSnakeController import RandomSnakeController
-from Vec2 import Vec2
-from GameManager import GameManager
-from TextRenderer import TextRenderer
+from controllers.RandomSnakeController import RandomSnakeController
+from game.Vec2 import Vec2
+from simulation.GameManager import GameManager
+from renderers.TextRenderer import TextRenderer
 
 
 if __name__ == '__main__':

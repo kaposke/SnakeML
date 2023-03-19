@@ -1,7 +1,7 @@
 import math
 import random
-from Vec2 import Vec2
-from Snake import Snake
+from .Vec2 import Vec2
+from .Snake import Snake
 
 
 class Game:
@@ -65,13 +65,21 @@ class Game:
         return self._board_size
 
     @property
-    def snake(self):
-        return self._snake
-
-    @property
     def is_over(self):
         return self._over
 
     @property
     def score(self):
         return self._score
+
+    @property
+    def snake_body(self):
+        return self._snake.body
+
+    @property
+    def snake_direction(self):
+        return self._snake.direction
+
+    @property
+    def apple_position(self):
+        return self._apple_position

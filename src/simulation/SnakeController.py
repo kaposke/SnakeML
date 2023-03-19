@@ -1,5 +1,5 @@
 
-from GameObservation import GameObservation
+from .GameObservation import GameObservation
 
 
 class SnakeController:

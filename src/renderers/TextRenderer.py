@@ -1,7 +1,7 @@
 
 
-from GameObservation import GameObservation
-from Vec2 import Vec2
+from simulation.GameObservation import GameObservation
+from game.Vec2 import Vec2
 
 
 class TextRenderer:
