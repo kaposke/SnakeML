@@ -1,10 +1,11 @@
 class GameObservation:
 
-    def __init__(self, board_size, is_game_over, apple_position, snake_body, snake_direction, score):
+    def __init__(self, board_size, is_game_over, apple_position, snake_body, snake_head, snake_direction, score):
         self._board_size = board_size
         self._is_game_over = is_game_over
         self._apple_position = apple_position
         self._snake_body = snake_body
+        self._snake_head = snake_head
         self._snake_direction = snake_direction
         self._score = score
 
@@ -23,6 +24,10 @@ class GameObservation:
     @property
     def snake_body(self):
         return self._snake_body
+
+    @property
+    def snake_head(self):
+        return self._snake_head
 
     @property
     def snake_direction(self):

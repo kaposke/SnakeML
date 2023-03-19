@@ -83,6 +83,10 @@ class Game:
         return self._snake.body
 
     @property
+    def snake_head(self):
+        return self._snake.head
+
+    @property
     def snake_direction(self):
         return self._snake.direction
 
