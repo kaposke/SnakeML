@@ -1,21 +1,19 @@
-
-from controllers.RandomSnakeController import RandomSnakeController
+import time
 from game.Vec2 import Vec2
-from simulation.GameManager import GameManager
-from renderers.PyGameRenderer import PyGameRenderer
+from simulation.Simulation import Simulation
 from renderers.TextRenderer import TextRenderer
+from renderers.PyGameRenderer import PyGameRenderer
 
+board_size = Vec2(20, 20)
+simulation = Simulation(board_size)
 
-if __name__ == '__main__':
-    gameManager = GameManager(Vec2(20, 20), RandomSnakeController())
-    textRenderer = TextRenderer()
-    pygameRenderer = PyGameRenderer()
+observation = simulation.game_observation
 
-    for i in range(10):
-        gameManager.restart()
-        while gameManager.is_running:
-            gameManager.step()
-            textRenderer.render(gameManager.game_observation)
-            pygameRenderer.render(gameManager.game_observation)
+pygameRenderer = PyGameRenderer()
+pygameRenderer.render(observation)
 
-    pygameRenderer.quit()
+while simulation.is_running:
+    simulation.set_input(Vec2(1, 0))
+    observation = simulation.step()
+    pygameRenderer.render(observation)
+
