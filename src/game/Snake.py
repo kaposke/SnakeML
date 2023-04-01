@@ -8,7 +8,6 @@ class Snake:
         self._direction: Vec2 = Vec2(1, 0)
 
     def step(self):
-        print(self.direction)
         # Move body
         body_len = len(self.body)
         for i in reversed(range(1, body_len)):
