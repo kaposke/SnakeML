@@ -12,8 +12,12 @@ observation = simulation.game_observation
 pygameRenderer = PyGameRenderer()
 pygameRenderer.render(observation)
 
-while simulation.is_running:
-    simulation.set_input(Vec2(1, 0))
-    observation = simulation.step()
-    pygameRenderer.render(observation)
+for _ in range(100):
+    simulation.restart()
+    while simulation.is_running:
+        simulation.set_input(Vec2(0, -1))
+        observation = simulation.step()
+        pygameRenderer.render(observation)
+
+pygameRenderer.quit()
 
